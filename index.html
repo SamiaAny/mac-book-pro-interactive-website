@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mac-book-pro</title>
+    <!-- bootstrap css stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <!-- custom css stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <main class="m-5">
+        <section class="container">
+            <div class="row">
+                <div class="col-md-6 img-resize">
+                    <img src="images/mac.png" alt="">
+                </div>
+                <div class="col-md-6">
+                    <h1>Customize your Blue 24-inch iMac with Apple M1 chip.</h1>
+                    <p>Apple M1 chip with 8-core CPU with 4 performance cores and 4 efficiency cores, 7-core GPU, and 16-core Neural Engine 8GB unified memory 256GB SSD storage Two Thunderbolt/ USB 4 ports Magic Mouse Keyboard-US English</p>
+                    <!-- Memory -->
+                    <div class="my-3">
+                        <h5>Memory</h5>
+                        <button type="button" class="btn btn-outline-dark" onclick="unifiedMemory('8GB')">8GB unified
+                            memory</button>
+                        <button type="button" class="btn btn-outline-dark" onclick="unifiedMemory('16GB')">16GB unified
+                            memory</button>
+                    </div>
+                    <!-- Storage -->
+                    <div class="my-3">
+                        <h5>Storage</h5>
+                        <button type="button" class="btn btn-outline-dark" onclick="storageSSD('256GB')">256GB SSD
+                            storage</button>
+
+                        <button type="button" class="btn btn-outline-dark" onclick="storageSSD('512GB')">512GB SSD
+                            storage</button>
+
+                        <button type="button" class="btn btn-outline-dark" onclick="storageSSD('1TB')">1TB SSD
+                            storage</button>
+                    </div>
+                    <!-- delivery option -->
+                    <div class="my-3">
+                        <h5>choose your delivery option</h5>
+                        <button type="button" class="btn btn-outline-dark" onclick="deliveryCost('free')">Friday,Aug 25
+                            Free Prime Delivery</button>
+                        <button type="button" class="btn btn-outline-dark" onclick="deliveryCost('urgent')">Friday,Aug
+                            21 Delivery Charge $20</button>
+                    </div>
+                    <!-- total price list -->
+                    <div class="w-50 my-3">
+                        <div class="d-flex justify-content-between">
+                            <h5>Best Price</h5>
+                            <h5>$<span id="best-price">1299</span> </h5>
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-between">
+                            <h5>Extra Memory Cost</h5>
+                            <h5>$<span id="memory-cost">0</span></h5>
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-between">
+                            <h5>Extra Storage Cost</h5>
+                            <h5>$<span id="storage-cost">0</span></h5>
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-between">
+                            <h5>Delivery Charge</h5>
+                            <h5>$<span id="delivery-cost">0</span></h5>
+                        </div>
+                        <hr class="line-style">
+                        <div class="d-flex justify-content-between">
+                            <h5>Total Price</h5>
+                            <h5>$<span id="total-count">1299</span></h5>
+                        </div>
+                        <hr>
+                        <!-- promo code -->
+                        <h4>Add Promo Code</h4>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="promo-code">
+                            <button type="button" class="btn btn-danger" id="apply-btn">Apply</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <hr>
+        <!-- final price -->
+        <section class="container text-center">
+            <h2>Total: $<span id="total">1299</span></h2>
+        </section>
+    </main>
+    <!-- bootstrap js bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+    <!-- custom js -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
