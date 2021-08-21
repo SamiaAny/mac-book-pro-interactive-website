@@ -23,35 +23,37 @@
                     <h1>Customize your Blue 24-inch iMac with Apple M1 chip.</h1>
                     <p>Apple M1 chip with 8-core CPU with 4 performance cores and 4 efficiency cores, 7-core GPU, and 16-core Neural Engine 8GB unified memory 256GB SSD storage Two Thunderbolt/ USB 4 ports Magic Mouse Keyboard-US English</p>
                     <!-- Memory -->
-                    <div class="my-3">
+                    <div class="my-5">
                         <h5>Memory</h5>
-                        <button type="button" class="btn btn-outline-dark" onclick="unifiedMemory('8GB')">8GB unified
+                        <button type="button" class="btn btn-outline-dark" onclick="upgradeMemory('8GB')">8GB unified
                             memory</button>
-                        <button type="button" class="btn btn-outline-dark" onclick="unifiedMemory('16GB')">16GB unified
+
+                        <button type="button" class="btn btn-outline-dark" onclick="upgradeMemory('16GB')">16GB unified
                             memory</button>
                     </div>
                     <!-- Storage -->
-                    <div class="my-3">
+                    <div class="my-5">
                         <h5>Storage</h5>
-                        <button type="button" class="btn btn-outline-dark" onclick="storageSSD('256GB')">256GB SSD
+                        <button type="button" class="btn btn-outline-dark" onclick="upgradeStorageSSD('256GB')">256GB SSD
                             storage</button>
 
-                        <button type="button" class="btn btn-outline-dark" onclick="storageSSD('512GB')">512GB SSD
+                        <button type="button" class="btn btn-outline-dark" onclick="upgradeStorageSSD('512GB')">512GB SSD
                             storage</button>
 
-                        <button type="button" class="btn btn-outline-dark" onclick="storageSSD('1TB')">1TB SSD
+                        <button type="button" class="btn btn-outline-dark" onclick="upgradeStorageSSD('1TB')">1TB SSD
                             storage</button>
                     </div>
                     <!-- delivery option -->
-                    <div class="my-3">
+                    <div class="my-5">
                         <h5>choose your delivery option</h5>
                         <button type="button" class="btn btn-outline-dark" onclick="deliveryCost('free')">Friday,Aug 25
                             Free Prime Delivery</button>
+                            
                         <button type="button" class="btn btn-outline-dark" onclick="deliveryCost('urgent')">Friday,Aug
                             21 Delivery Charge $20</button>
                     </div>
                     <!-- total price list -->
-                    <div class="w-50 my-3">
+                    <div class="w-50 my-5">
                         <div class="d-flex justify-content-between">
                             <h5>Best Price</h5>
                             <h5>$<span id="best-price">1299</span> </h5>
@@ -91,13 +93,13 @@
         <hr>
         <!-- final price -->
         <section class="container text-center">
-            <h2>Total: $<span id="total">1299</span></h2>
+            <h2>Total: $<span id="update-total">1299</span></h2>
         </section>
     </main>
+
     <!-- bootstrap js bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
     <!-- custom js -->
     <script src="js/script.js"></script>
 </body>

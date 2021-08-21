@@ -1,5 +1,6 @@
 //memory cost
 const memoryCost16GB = 180;
+const defaultCost = 0;
 
 //storage cost
 const storageCost512GB = 100;
@@ -8,83 +9,81 @@ const storageCost1TB = 180;
 //delivery charge 
 const deliveryCharge = 20;
 
-const bestPrice = document.getElementById('best-price');
-
-const memoryCostInput = document.getElementById('memory-cost');
-
-const storageCostInput = document.getElementById('storage-cost');
-
-const deliveryCostInput = document.getElementById('delivery-cost');
-
 const totalPriceInput = document.getElementById('total-count');
 
-const totalField = document.getElementById('total');
+const updatedTotalField = document.getElementById('update-total');
 
-//onclick event for memory
-function unifiedMemory(memorySize) {
-    // const memoryCostInput = document.getElementById('memory-cost');
-    const memoryCostInputText = memoryCostInput.innerText;
-    if (memorySize == "16GB") {
-        memoryCostInput.innerText = memoryCost16GB;
-    }
-    else {
-        memoryCostInput.innerText = 0;
-    }
-    updateTotal(); 
-}
-
-
-//onclick event for storage
-function storageSSD(storageSize) {
-    // const storageCostInput = document.getElementById('storage-cost');
-    if (storageSize == '512GB') {
-        storageCostInput.innerText = storageCost512GB;
-    }
-    else if (storageSize == '1TB') {
-        storageCostInput.innerText = storageCost1TB;
-    }
-    else {
-        storageCostInput.innerText = 0;
-    }
+function updateCost(productInfo, price) {
+    const priceText = document.getElementById(productInfo + '-cost');
+    priceText.innerText = price;
     updateTotal();
 }
 
-//onclick event for delivery cost
-function deliveryCost(delOption) {
-    // const deliveryCostInput = document.getElementById('delivery-cost');
-    if (delOption == 'free') {
-        deliveryCostInput.innerText = 0;
-    }
-    else if (delOption == 'urgent') {
-        deliveryCostInput.innerText = deliveryCharge;
-    }
-    updateTotal();
+function updateTotal() {
+    const amount = calculateTotalAmount();
+    totalPriceInput.innerText = amount;
+    updatedTotalField.innerText = amount;
 }
 
 function calculateTotalAmount() {
+    const bestPrice = document.getElementById('best-price');//main price
     const macPrice = parseInt(bestPrice.innerText);
+
+    const memoryCostInput = document.getElementById('memory-cost');
     const memoryCost = parseInt(memoryCostInput.innerText);
+
+    const storageCostInput = document.getElementById('storage-cost');
     const storageCost = parseInt(storageCostInput.innerText);
+    
+    const deliveryCostInput = document.getElementById('delivery-cost');
     const totalDeliveryCost = parseInt(deliveryCostInput.innerText);
 
     const totalCount = macPrice + memoryCost + storageCost + totalDeliveryCost;
     return totalCount;
 }
 
-function updateTotal() {
-    const amount = calculateTotalAmount();
-    totalPriceInput.innerText = amount;
-    totalField.innerText = amount;
+
+//onclick event for memory
+function upgradeMemory(memorySize) {
+    if (memorySize == "16GB") {
+        updateCost('memory', memoryCost16GB);
+    }
+    else {
+        updateCost('memory', defaultCost);
+    }
+}
+
+//onclick event for storage
+function upgradeStorageSSD(storageSize) {
+    if (storageSize == '512GB') {
+        updateCost('storage', storageCost512GB);
+    }
+    else if (storageSize == '1TB') {
+        updateCost('storage', storageCost1TB);
+    }
+    else {
+        updateCost('storage', defaultCost);
+    }
+}
+
+//onclick event for delivery cost
+function deliveryCost(delOption) {
+    if (delOption == 'free') {
+        updateCost('delivery', defaultCost);
+    }
+    else if (delOption == 'urgent') {
+        updateCost('delivery', deliveryCharge);
+    }
 }
 
 //Add event handler for promo code
-document.getElementById("apply-btn").addEventListener('click',function(){
+document.getElementById("apply-btn").addEventListener('click', function () {
     const promoCodeInput = document.getElementById('promo-code');
     const amountBeforeDiscount = parseInt(totalPriceInput.innerText);
     if (promoCodeInput.value == 'stevekaku') {
         const discount = amountBeforeDiscount / 5; //for 20% disount
         const discountPrice = amountBeforeDiscount - discount;
-        totalField.innerText = discountPrice;
+        updatedTotalField.innerText = discountPrice;
         promoCodeInput.value = '';
     }
 });
