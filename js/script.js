@@ -67,18 +67,20 @@ function upgradeStorageSSD(storageSize) {
 }
 
 //onclick event for delivery cost
-function deliveryCost(delOption) {
-    if (delOption == 'free') {
+function deliveryCost(deliveryOption) {
+    if (deliveryOption == 'free') {
         updateCost('delivery', defaultCost);
     }
-    else if (delOption == 'urgent') {
+    else if (deliveryOption == 'urgent') {
         updateCost('delivery', deliveryCharge);
     }
 }
 
 //Add event handler for promo code
 document.getElementById("apply-btn").addEventListener('click', function () {
+    //promo code field
     const promoCodeInput = document.getElementById('promo-code');
+    //previous amount before getting discount
     const amountBeforeDiscount = parseInt(totalPriceInput.innerText);
     if (promoCodeInput.value == 'stevekaku') {
         const discount = amountBeforeDiscount / 5; //for 20% disount
